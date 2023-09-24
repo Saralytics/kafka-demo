@@ -9,7 +9,7 @@ public class Customer implements Serializable {
     private Integer id;
     private String address;
     private Date firstPurchaseDate;
-
+    public Customer(){}
     public Customer(String name, Integer id, String address, Date firstPurchaseDate) {
         this.name = name;
         this.id = id;

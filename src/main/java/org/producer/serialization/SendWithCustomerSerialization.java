@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutionException;
 public class SendWithCustomerSerialization {
 
     private final static String BOOTSTRAP_SERVERS = "192.168.143.134:9092"; // this could be a list
-    private final static String TOPIC = "customerpartition";
+    private final static String TOPIC = "java-api";
     // use String datatype for both key and value
     private static Producer<String,Customer> createProducer(){
 
@@ -55,8 +55,8 @@ public class SendWithCustomerSerialization {
     public static void main(String[] args) throws ParseException {
         System.out.println("Sending a customer info");
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-mm-dd");
-        Date date = sf.parse("2018-01-01");
-        Customer data = new Customer("Jackson",100,"Al reem island",date);
+        Date date = sf.parse("2018-12-01");
+        Customer data = new Customer("Celine",101,"Al reem island",date);
         runProducer(data);
     }
 }

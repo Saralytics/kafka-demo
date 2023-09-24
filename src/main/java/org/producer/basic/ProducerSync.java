@@ -9,7 +9,7 @@ import java.util.concurrent.ExecutionException;
 public class ProducerSync {
 
     private final static String BOOTSTRAP_SERVERS = "192.168.143.134:9092"; // this could be a list
-    private final static String TOPIC = "java-api";
+    private final static String TOPIC = "consumer01";
     // use String datatype for both key and value
     private static Producer<String,String> createProducer(){
 
@@ -31,12 +31,14 @@ public class ProducerSync {
 
         // the actual data to send is in ProducerRecord
         //                      key, value
-        final ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC,"888");
+        final ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC,"555");
         try {
-            RecordMetadata metadata = producer.send(record).get();
+            for(int i=0;i<10;i++) {
+                RecordMetadata metadata = producer.send(record).get();
 
-            System.out.println("Send OK");
-            System.out.printf("Record values = %s partition = %d offset = %d ",record.value(), metadata.partition(), metadata.offset());
+                System.out.println("Send OK");
+                System.out.printf("Record values = %s partition = %d offset = %d ", record.value(), metadata.partition(), metadata.offset());
+            }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } catch (ExecutionException e) {

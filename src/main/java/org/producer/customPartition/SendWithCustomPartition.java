@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
 public class SendWithCustomPartition {
 
     private final static String BOOTSTRAP_SERVERS = "192.168.143.134:9092"; // this could be a list
-    private final static String TOPIC = "java-api";
+    private final static String TOPIC = "consumer02";
     // use String datatype for both key and value
     private static Producer<String, Customer> createProducer(){
 
