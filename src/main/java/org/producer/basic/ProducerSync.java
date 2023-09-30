@@ -8,8 +8,8 @@ import java.util.concurrent.ExecutionException;
 
 public class ProducerSync {
 
-    private final static String BOOTSTRAP_SERVERS = "192.168.143.134:9092"; // this could be a list
-    private final static String TOPIC = "consumer01";
+    private final static String BOOTSTRAP_SERVERS = "ec2-18-135-249-38.eu-west-2.compute.amazonaws.com:9092"; // this could be a list
+    private final static String TOPIC = "wordcount-in2";
     // use String datatype for both key and value
     private static Producer<String,String> createProducer(){
 
@@ -31,7 +31,7 @@ public class ProducerSync {
 
         // the actual data to send is in ProducerRecord
         //                      key, value
-        final ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC,"555");
+        final ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC,"Late night diner");
         try {
             for(int i=0;i<10;i++) {
                 RecordMetadata metadata = producer.send(record).get();

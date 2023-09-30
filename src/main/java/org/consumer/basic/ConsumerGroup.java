@@ -12,7 +12,7 @@ public class ConsumerGroup {
 
     private final static String BOOTSTRAP_SERVERS = "192.168.143.134:9092";
     private final static String TOPIC = "consumer01";
-    private final static String GROUPID = "group01";
+    private final static String GROUPID = "group02";
     static Logger log = LoggerFactory.getLogger(MultipleConsumer.class.getName());
 
     // Create a consumer

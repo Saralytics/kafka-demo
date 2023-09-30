@@ -9,9 +9,9 @@ import java.util.Collections;
 import java.util.Properties;
 
 public class ConsumerSingleTopic {
-    private final static String BOOTSTRAP_SERVERS = "192.168.143.134:9092";
-    private final static String TOPIC = "consumer01";
-    private final static String GROUPID = "group01";
+    private final static String BOOTSTRAP_SERVERS = "18.135.249.38:9092";
+    private final static String TOPIC = "wordcount-out2";
+    private final static String GROUPID = "group03";
     static Logger log = LoggerFactory.getLogger(MultipleConsumer.class.getName());
 
     // Create a consumer

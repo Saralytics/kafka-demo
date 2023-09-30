@@ -9,7 +9,7 @@
         </layout>
     </appender>
 
-    <logger name="program" level="info" additivity="false">
+    <logger name="program" level="debug" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
 
